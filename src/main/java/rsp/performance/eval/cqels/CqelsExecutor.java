@@ -92,7 +92,7 @@ public class CqelsExecutor {
 			query = " PREFIX ex: <http://myexample.org/> "
 					+"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>"
 					+"SELECT ?sector ?manufacture_ID ?label "
-	                +" FROM NAMED <path/to/sensor_data.rdf> "
+	                		+" FROM NAMED <path/to/sensor_data.rdf> "
 					+" WHERE { "
 					+" STREAM <http://myexample.org> [RANGE 1s] "
 					+" { ?message ex:observeChlorine ?observation . } "
