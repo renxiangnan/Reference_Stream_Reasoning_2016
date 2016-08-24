@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/rsp-performance-evaluation.iml" filepath="$PROJECT_DIR$/rsp-performance-evaluation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rsp-eval.iml" filepath="$PROJECT_DIR$/rsp-eval.iml" />
     </modules>
   </component>
 </project>

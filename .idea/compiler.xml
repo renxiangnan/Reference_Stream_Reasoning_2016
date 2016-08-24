@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="rsp-performance-evaluation" />
+        <module name="rsp-eval" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="rsp-performance-evaluation" target="1.5" />
+      <module name="rsp-eval" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
