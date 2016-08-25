@@ -100,7 +100,7 @@ public class CqelsExecutor {
 					+" GRAPH <path/to/sensor_data.rdf> "
 					+" {  "
 					+"   ?observation ex:isProducedBy ?sensorId ."
-					+" 	 ?sensorId ex:belongsTo ?sector ; "
+					+"   ?sensorId ex:belongsTo ?sector ; "
 					+"             ex:isCreatedBy ?manufacture_ID ; "
 					+"             rdfs:label ?label . } "
 					+" }  ";
