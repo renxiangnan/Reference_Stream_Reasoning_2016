@@ -32,10 +32,10 @@ public class CsparqlExecutor {
 		case TEST_QUERY_1: 
 			
 			query = "REGISTER QUERY TestQuery1 AS "
-					+ " PREFIX ex: <http://myexample.org/> "
+		    + " PREFIX ex: <http://myexample.org/> "
                     + " SELECT DISTINCT ?observation "
-					+ " FROM STREAM <http://myexample.org/stream> [RANGE 1s STEP 1s] " 
-					+ " WHERE { "
+		    + " FROM STREAM <http://myexample.org/stream> [RANGE 1s STEP 1s] " 
+		    + " WHERE { "
                     + " ?message ex:observeChlorine ?observation .  "
                     + " ?observation ex:hasTag ?tag . "
                     + "} ";
@@ -46,10 +46,10 @@ public class CsparqlExecutor {
 		
 		case TEST_QUERY_2:
 			query = "REGISTER QUERY TestQuery2 AS "
-					+ " PREFIX ex: <http://myexample.org/> "
+		    + " PREFIX ex: <http://myexample.org/> "
                     + " SELECT DISTINCT ?observation (COUNT(?tag) AS ?numberOfTags) "
-					+ " FROM STREAM <http://myexample.org/stream> [RANGE 1s STEP 1s] " 
-					+ " WHERE { "
+		    + " FROM STREAM <http://myexample.org/stream> [RANGE 1s STEP 1s] " 
+		    + " WHERE { "
                     + " ?message ex:observeChlorine ?observation .  "
                     + " ?observation ex:hasTag ?tag . } "
                     + " GROUP BY ?observation "
@@ -63,10 +63,10 @@ public class CsparqlExecutor {
 		case TEST_QUERY_3:
 	
 			query = "REGISTER QUERY TestQuery3 COMPUTED EVERY 1s AS "
-					+ " PREFIX ex: <http://myexample.org/> "
+		    + " PREFIX ex: <http://myexample.org/> "
                     + " SELECT ?observation "
-					+ " FROM STREAM <http://myexample.org/stream> [RANGE 1s STEP 1s] " 
-					+ " WHERE { "
+		    + " FROM STREAM <http://myexample.org/stream> [RANGE 1s STEP 1s] " 
+		    + " WHERE { "
                     + " ?message ex:observeChlorine ?observation .  "
                     + " ?observation ex:hasTag ?tag . "
                     + " FILTER ( regex(str(?observation), '00$', 'i') "
@@ -81,20 +81,20 @@ public class CsparqlExecutor {
 		case TEST_QUERY_4:	
 			
 			query = " REGISTER QUERY TestQuery4 AS "
-					+" PREFIX ex: <http://myexample.org/> "
-					+ "PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#> "
-					+" SELECT ?observation (COUNT(?tag) AS ?numberOfTags) "
-					+" FROM STREAM <http://myexample.org/stream> [RANGE 1s STEP 1s] "
-					+" WHERE { " 
-					+" ?message ex:observeChlorine ?observation . "  
-					+" ?observation ex:hasTag ?tag . "
-					+" FILTER ( regex(str(?tag), '1$', \"i\") "
-					+" || regex(str(?tag), '2$', \"i\")  "
-					+" || regex(str(?tag), '3$', \"i\")) "
-					+" FILTER (f:timestamp(?observation, ex:hasTag, ?tag) "
-					+" >= f:timestamp(?message, ex:observeChlorine, ?observation)) "
-					+" } "
-					+" GROUP BY ?observation ?numberOfTags";
+			+" PREFIX ex: <http://myexample.org/> "
+			+ "PREFIX f: <http://larkc.eu/csparql/sparql/jena/ext#> "
+			+" SELECT ?observation (COUNT(?tag) AS ?numberOfTags) "
+			+" FROM STREAM <http://myexample.org/stream> [RANGE 1s STEP 1s] "
+			+" WHERE { " 
+			+" ?message ex:observeChlorine ?observation . "  
+			+" ?observation ex:hasTag ?tag . "
+			+" FILTER ( regex(str(?tag), '1$', \"i\") "
+			+" || regex(str(?tag), '2$', \"i\")  "
+			+" || regex(str(?tag), '3$', \"i\")) "
+			+" FILTER (f:timestamp(?observation, ex:hasTag, ?tag) "
+			+" >= f:timestamp(?message, ex:observeChlorine, ?observation)) "
+			+" } "
+			+" GROUP BY ?observation ?numberOfTags";
 			
 			generator = new StreamGenerator(streamURI);
 
@@ -141,8 +141,8 @@ public class CsparqlExecutor {
 					+ " ?message ex:observeChlorine ?observation ."
 					+ " ?observation ex:isProducedBy ?sensorId ."
 					+ " ?sensorId ex:belongsTo ?sector ;"
-					+ " 		  ex:isCreatedBy ?manufacture_ID ; "
-					+ "			  rdfs:label ?label . "
+					+ " 	      ex:isCreatedBy ?manufacture_ID ; "
+					+ "	      rdfs:label ?label . "
 					+ " } ";
 			
 			generator = new StreamGenerator(streamURI);
