@@ -42,6 +42,7 @@ public class CqelsExecutor {
 			break;
 			
 		case QUERY_1:
+			
 			query = " PREFIX ex: <http://myexample.org/> "
 					+" SELECT DISTINCT ?observation "
 					+" WHERE {"
